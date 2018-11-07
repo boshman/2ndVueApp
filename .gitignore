@@ -1,0 +1,10 @@
+
+2ndVueApp/.vs/2ndVueApp/v15/.suo
+2ndVueApp/.vs/2ndVueApp/v15/Server/sqlite3/db.lock
+2ndVueApp/.vs/2ndVueApp/v15/Server/sqlite3/storage.ide
+2ndVueApp/.vs/2ndVueApp/v15/Server/sqlite3/storage.ide-shm
+2ndVueApp/.vs/2ndVueApp/v15/Server/sqlite3/storage.ide-wal
+2ndVueApp/2ndVueApp.csproj.user
+*.dll
+2ndVueApp/bin/*
+2ndVueApp/obj/*
