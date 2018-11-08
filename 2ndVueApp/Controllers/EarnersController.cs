@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using _2ndVueApp.Models;
 
-namespace _2ndVueApp.ClientApp.src.components
+namespace _2ndVueApp.Controllers
 {
     [Produces("application/json")]
     [Route("api/Earners")]
@@ -20,27 +20,27 @@ namespace _2ndVueApp.ClientApp.src.components
             _context = context;
         }
 
-    // GET: api/Earners
-    [HttpGet]
-    public IEnumerable<Earner> GetEarners()
-    {
-      return _context.Earners;
-    }
+        // GET: api/Earners
+        [HttpGet]
+        public IEnumerable<Earner> GetEarners()
+        {
+            return _context.Earners;
+        }
 
-    [HttpGet("semantic_dd")]
-    public Object GetEarnersForSemanticDropdown()
-    {
-      var earners = (from e in _context.Earners
-                      select new
-                      {
-                        name = e.LastName + ", " + e.FirstName,
-                        value = e.EarnerId
-                      });
+        [HttpGet("semantic_dd")]
+        public Object GetEarnersForSemanticDropdown()
+        {
+            var earners = (from e in _context.Earners
+                           select new
+                           {
+                               name = e.LastName + ", " + e.FirstName,
+                               value = e.EarnerId
+                           });
 
-      var rtnObject = new { success = "true", results = earners };
+            var rtnObject = new { success = "true", results = earners };
 
-      return rtnObject;
-    }
+            return rtnObject;
+        }
 
         // GET: api/Earners/5
         [HttpGet("{id}")]
